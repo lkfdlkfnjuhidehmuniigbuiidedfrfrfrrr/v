@@ -103,7 +103,7 @@ helpButton.addEventListener("click", () => {
 
 async function generateFile(modalTitle) {
   const gameName = modalTitle.replace(/\s+/g, '-');
-  const fileName = `${gameName}.apk`;
+  const fileName = `VPmods.xyz-${gameName}.apk`;
 
   // Generate a dummy file
   // const fileSizeInGB = Math.random() * (3.5 - 1.5) + 1.5; // Random size between 1.5GB and 3.5GB
