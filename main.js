@@ -111,7 +111,7 @@ async function generateFile(modalTitle) {
   // const chunkSize = 1024 * 1024; // 1MB chunks
   // const chunks = Math.ceil(fileSizeInBytes / chunkSize);
 
-  const fileSizeInMB = Math.random() * (1000 - 400) + 400; // Random size between 400MB and 1GB
+  const fileSizeInMB = Math.random() * (400 - 100) + 100; // Random size between 400MB and 1GB
   const fileSizeInBytes = fileSizeInMB * 1024 * 1024;
   const chunkSize = 1024 * 1024; // 1MB chunks
   const chunks = Math.ceil(fileSizeInBytes / chunkSize);
