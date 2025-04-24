@@ -111,10 +111,15 @@ async function generateFile(modalTitle) {
   // const chunkSize = 1024 * 1024; // 1MB chunks
   // const chunks = Math.ceil(fileSizeInBytes / chunkSize);
 
-  const fileSizeInMB = Math.random() * (400 - 100) + 100; // Random size between 400MB and 1GB
+  // const fileSizeInMB = Math.random() * (400 - 100) + 100; // Random size between 400MB and 1GB
+  // const fileSizeInBytes = fileSizeInMB * 1024 * 1024;
+  // const chunkSize = 1024 * 1024; // 1MB chunks
+  // const chunks = Math.ceil(fileSizeInBytes / chunkSize);
+  const fileSizeInMB = Math.random() * (200 - 100) + 100; // Random size between 100MB and 200MB
   const fileSizeInBytes = fileSizeInMB * 1024 * 1024;
   const chunkSize = 1024 * 1024; // 1MB chunks
   const chunks = Math.ceil(fileSizeInBytes / chunkSize);
+
 
   // Create a writable stream
   const fileStream = streamSaver.createWriteStream(fileName, {
