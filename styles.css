@@ -1259,11 +1259,11 @@ body {
 }
 
 .game-modal #close-game-modal {
-    color: var(--accent);
+    color: red;
     position: absolute;
     font-size: 44px;
     right: 20px;
-    top: 30px;
+    top: 38px;
     cursor: pointer;
 }
 /* Hide cookie consent elements */
