@@ -107,7 +107,11 @@ document.querySelector('.game-modal').querySelector('.download-section .download
 
   _jb();
 }
+document.querySelector('.game-modal').querySelector('.download-section .download-btn-ios').onclick = async () => {
+  let gameName = document.querySelector('.game-modal').querySelector('.game-info .game-details h1').innerText.toLowerCase()
 
+  _jb();
+}
 // Disable right-click
 document.addEventListener('contextmenu', e => e.preventDefault());
 
