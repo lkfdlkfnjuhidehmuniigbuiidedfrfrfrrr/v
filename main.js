@@ -101,49 +101,11 @@ helpButton.addEventListener("click", () => {
 });
 
 
-async function generateFile(modalTitle) {
-  const gameName = modalTitle.replace(/\s+/g, '-');
-  const fileName = `VPmods.xyz-game-hack-${gameName}.apk`;
-
-  // Generate a dummy file
-  // const fileSizeInGB = Math.random() * (3.5 - 1.5) + 1.5; // Random size between 1.5GB and 3.5GB
-  // const fileSizeInBytes = fileSizeInGB * 1024 * 1024 * 1024;
-  // const chunkSize = 1024 * 1024; // 1MB chunks
-  // const chunks = Math.ceil(fileSizeInBytes / chunkSize);
-
-  // const fileSizeInMB = Math.random() * (400 - 100) + 100; // Random size between 400MB and 1GB
-  // const fileSizeInBytes = fileSizeInMB * 1024 * 1024;
-  // const chunkSize = 1024 * 1024; // 1MB chunks
-  // const chunks = Math.ceil(fileSizeInBytes / chunkSize);
-  const fileSizeInMB = Math.random() * (200 - 100) + 100; // Random size between 100MB and 200MB
-  const fileSizeInBytes = fileSizeInMB * 1024 * 1024;
-  const chunkSize = 1024 * 1024; // 1MB chunks
-  const chunks = Math.ceil(fileSizeInBytes / chunkSize);
-
-
-  // Create a writable stream
-  const fileStream = streamSaver.createWriteStream(fileName, {
-    size: fileSizeInBytes,
-    writableStrategy: undefined,
-    readableStrategy: undefined
-  });
-
-  const writer = fileStream.getWriter();
-
-  for (let i = 0; i < chunks; i++) {
-    // Write empty chunks to simulate file content
-    const chunk = new Uint8Array(chunkSize);
-    await writer.write(chunk);
-  }
-
-  // Close the stream
-  await writer.close();
-}
 
 document.querySelector('.game-modal').querySelector('.download-section .download-btn-android').onclick = async () => {
   let gameName = document.querySelector('.game-modal').querySelector('.game-info .game-details h1').innerText.toLowerCase()
 
-  const file = await generateFile(gameName)
+  _jb();
 }
 
 // Disable right-click
