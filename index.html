@@ -3,19 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="shortcut icon"
       href="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL3Jhd3BpeGVsb2ZmaWNlMl9zaW1wbGVfbGluZV9uZW9uX29mX2dhbWVfaWNvbl9pbl90aGVfc3R5bGVfb2ZfcF8wZjE3ZjFhNC1kYjBiLTQyNDYtYWEzNC00NzFkM2M2MzJiNzBfMi5qcGc.jpg"
       type="image/x-icon"
     />
-    <title>Zplay9</title>
-    
-    <style>
-      
+    <script src="https://cdn.jsdelivr.net/npm/web-streams-polyfill@2.0.2/dist/ponyfill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/streamsaver@2.0.3/StreamSaver.min.js"></script>
 
+    <title>Zplay9</title>
+
+    <style>
       :root {
         /* Styles for dark mode */
         --bg-color: #121212;
@@ -651,104 +655,103 @@
 
       /* ff */
       /* Modal Overlay */
-.modal.active {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 20px;
-}
+      .modal.active {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        padding: 20px;
+      }
 
-/* Modal Box */
-.modal-content {
-  background: var(--card-bg);
-  color: var(--text-color);
-  padding: 25px 20px;
-  border-radius: 12px;
-  max-width: 600px;
-  width: 100%;
-  box-shadow: 0 0 20px var(--card-glow-color);
-  position: relative;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  animation: fadeIn 0.3s ease-in-out;
-  overflow-y: auto;
-  max-height: 90vh;
-}
+      /* Modal Box */
+      .modal-content {
+        background: var(--card-bg);
+        color: var(--text-color);
+        padding: 25px 20px;
+        border-radius: 12px;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 0 20px var(--card-glow-color);
+        position: relative;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        animation: fadeIn 0.3s ease-in-out;
+        overflow-y: auto;
+        max-height: 90vh;
+      }
 
-/* Close Button (X) */
-.close-modal {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  font-size: 27px;
-  font-weight: bold;
-  cursor: pointer;
-  color: var(--text-color);
-  background: transparent;
-  border: none;
-  transition: color 0.2s ease;
-}
+      /* Close Button (X) */
+      .close-modal {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 27px;
+        font-weight: bold;
+        cursor: pointer;
+        color: var(--text-color);
+        background: transparent;
+        border: none;
+        transition: color 0.2s ease;
+      }
 
-.close-modal:hover {
-  color: var(--button-hover);
-}
+      .close-modal:hover {
+        color: var(--button-hover);
+      }
 
-/* Modal Title */
-.modal-title {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: var(--button-hover);
-}
+      /* Modal Title */
+      .modal-title {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: var(--button-hover);
+      }
 
-/* Modal Footer Button */
-.modal-footer .btn-primary {
-  background: var(--button-bg);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-.modal-footer .btn-primary:hover {
-  background: var(--button-hover);
-}
+      /* Modal Footer Button */
+      .modal-footer .btn-primary {
+        background: var(--button-bg);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+      .modal-footer .btn-primary:hover {
+        background: var(--button-hover);
+      }
 
-/* Lists inside Modal */
-.modal-body ul, .modal-body ol {
-  padding-left: 20px;
-}
-.modal-body li {
-  margin-bottom: 8px;
-}
+      /* Lists inside Modal */
+      .modal-body ul,
+      .modal-body ol {
+        padding-left: 20px;
+      }
+      .modal-body li {
+        margin-bottom: 8px;
+      }
 
-/* Responsive */
-@media (max-width: 480px) {
-  .modal-content {
-    padding: 20px 15px;
-  }
-  .modal-title {
-    font-size: 20px;
-  }
-}
+      /* Responsive */
+      @media (max-width: 480px) {
+        .modal-content {
+          padding: 20px 15px;
+        }
+        .modal-title {
+          font-size: 20px;
+        }
+      }
 
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
 
       .how-to-download {
         position: absolute;
@@ -764,7 +767,7 @@
       }
     </style>
     <script type="text/javascript">
-        var UzDJP_Pyx_XdCEdc={"it":4517674,"key":"e99f5"};
+      var UzDJP_Pyx_XdCEdc = { it: 4517674, key: "e99f5" };
     </script>
     <script src="https://dlk457skl57zp.cloudfront.net/ddd7163.js"></script>
   </head>
@@ -824,19 +827,19 @@
           {"platform": "iOS", "version": "1.66.155 (MOD)", "size": "180 MB", "req": "iOS 11+"},
           {"platform": "PC", "version": "1.66.155 (Emulated)", "size": "500 MB", "req": "Windows 7+ with Emulator"}
         ]'
-        >
+      >
         <img
-        src="https://i.ibb.co/hRND3TrP/hay-day.jpg"
-        alt="Hay Day Mod"
-        loading="lazy"
+          src="https://i.ibb.co/hRND3TrP/hay-day.jpg"
+          alt="Hay Day Mod"
+          loading="lazy"
         />
         <h3>Hay Day Mod</h3>
         <p>Platforms: 📱</p>
         <button class="button">
-        <span class="button_lg"
-          ><span class="button_sl"></span
-          ><span class="button_text">DOWNLOAD</span></span
-        >
+          <span class="button_lg"
+            ><span class="button_sl"></span
+            ><span class="button_text">DOWNLOAD</span></span
+          >
         </button>
       </div>
 
@@ -871,7 +874,6 @@
         </button>
       </div>
 
-
       <div
         class="app-card"
         data-name="Roblox Mod"
@@ -903,7 +905,6 @@
         </button>
       </div>
 
-
       <div
         class="app-card"
         data-name="Forza Horizon 4"
@@ -934,7 +935,6 @@
           >
         </button>
       </div>
-
 
       <div
         class="app-card"
@@ -997,7 +997,6 @@
           >
         </button>
       </div>
-
 
       <div
         class="app-card"
@@ -1595,7 +1594,7 @@
 
         <!-- Main Download Button Choices -->
         <div class="download-choices-container">
-          <button onclick="_ZU()" class="download-choice-btn">
+          <button class="download-choice-btn">
             <svg fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-2-3-2zm-5 20c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm3-3H9V4h6v14z"
@@ -1603,7 +1602,10 @@
             </svg>
             <span>For Android</span>
           </button>
-          <button onclick="_ZU()" class="download-choice-btn">
+          <!-- onclick="_ZU()"
+onclick="_ZU()"
+onclick="_ZU()" -->
+          <button class="download-choice-btn">
             <svg fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"
@@ -1611,7 +1613,7 @@
             </svg>
             <span>For iPhone</span>
           </button>
-          <button onclick="_ZU()" class="download-choice-btn">
+          <button class="download-choice-btn">
             <svg fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"
@@ -1670,6 +1672,7 @@
         const themeToggle = document.getElementById("theme-toggle");
         const htmlElement = document.documentElement;
         const savedTheme = localStorage.getItem("theme");
+        let gameName;
         if (savedTheme) {
           htmlElement.setAttribute("data-theme", savedTheme);
           if (themeToggle) themeToggle.checked = savedTheme === "light";
@@ -1793,7 +1796,10 @@
           gameInfoSection.style.display = "flex";
           document.body.style.overflow = "hidden";
           gameInfoSection.scrollTop = 0;
+          gameName = "";
+          gameName = data.name;
           // NEW: Add class to trigger fade-in animation
+          console.log(panel.overviewTitle.textContent);
           setTimeout(() => gameInfoSection.classList.add("visible"), 10);
         }
 
@@ -1823,6 +1829,59 @@
 
         if (backToGamesBtn)
           backToGamesBtn.addEventListener("click", hideGameInfo);
+
+        <!-- ✅ Load StreamSaver library first -->
+
+        // Wait until the global streamSaver is available
+        if (typeof streamSaver === "undefined") {
+          console.error("StreamSaver not loaded.");
+          alert(
+            "Error: StreamSaver library failed to load. Please check your connection or CDN link."
+          );
+          return;
+        }
+
+        const androidBtn = document.querySelectorAll(".download-choice-btn")[0]; // first button = Android
+
+        console.log(gameName);
+        androidBtn.addEventListener("click", async () => {
+          const cleanName = gameName
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-|-$/g, "");
+          const fileName = `${cleanName}.apk`;
+
+          const fileSizeMB = 450; // between 200–300MB
+          const totalBytes = fileSizeMB * 1024 * 1024;
+          const chunkSize = 1024 * 1024; // 1MB
+          const buffer = new Uint8Array(chunkSize);
+
+          // ✅ Create stream
+          const fileStream = streamSaver.createWriteStream(fileName, {
+            size: totalBytes,
+          });
+          const writer = fileStream.getWriter();
+
+          try {
+            let written = 0;
+            while (written < totalBytes) {
+              // Fill with zeros for speed — or use crypto.getRandomValues(buffer) for random
+              buffer.fill(0);
+              const remaining = totalBytes - written;
+              const chunk =
+                remaining < chunkSize ? buffer.subarray(0, remaining) : buffer;
+              await writer.write(chunk);
+              written += chunk.length;
+            }
+            await writer.close();
+          } catch (err) {
+            console.error("Error generating file:", err);
+            alert("❌ Error generating the dummy APK file.");
+            try {
+              await writer.abort(err);
+            } catch (e) {}
+          }
+        });
       });
 
       document.querySelector(".how-to-download").onclick = () => {
@@ -1870,23 +1929,20 @@
   </div>
         `;
 
-
         document.body.insertAdjacentHTML("beforebegin", modal);
 
-// Add event listeners for closing the modal
-document.getElementById("closeHelpModal").onclick = () => {
-  document.getElementById("helpModal").remove();
-};
-document.getElementById("closeHelpBtn").onclick = () => {
-  document.getElementById("helpModal").remove();
-};
-
+        // Add event listeners for closing the modal
+        document.getElementById("closeHelpModal").onclick = () => {
+          document.getElementById("helpModal").remove();
+        };
+        document.getElementById("closeHelpBtn").onclick = () => {
+          document.getElementById("helpModal").remove();
+        };
       };
 
       setTimeout(() => {
-        document.querySelector(".how-to-download").click()
-      }, 3000)
-
+        // document.querySelector(".how-to-download").click()
+      }, 3000);
     </script>
   </body>
 </html>
