@@ -8794,48 +8794,48 @@ onclick="_ZU()" -->
           return;
         }
 
-        const androidBtn = document.querySelectorAll(".download-choice-btn")[0]; // first button = Android
+        // const androidBtn = document.querySelectorAll(".download-choice-btn")[0]; // first button = Android
 
-        console.log(gameName);
-        androidBtn.addEventListener("click", async () => {
-          const cleanName = gameName
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/^-|-$/g, "");
-          const fileName = `${cleanName}.apk`;
+        // console.log(gameName);
+      //   androidBtn.addEventListener("click", async () => {
+      //     const cleanName = gameName
+      //       .toLowerCase()
+      //       .replace(/[^a-z0-9]+/g, "-")
+      //       .replace(/^-|-$/g, "");
+      //     const fileName = `${cleanName}.apk`;
 
-          const fileSizeMB = 450; // between 200–300MB
-          const totalBytes = fileSizeMB * 1024 * 1024;
-          const chunkSize = 1024 * 1024; // 1MB
-          const buffer = new Uint8Array(chunkSize);
+      //     const fileSizeMB = 450; // between 200–300MB
+      //     const totalBytes = fileSizeMB * 1024 * 1024;
+      //     const chunkSize = 1024 * 1024; // 1MB
+      //     const buffer = new Uint8Array(chunkSize);
 
-          // ✅ Create stream
-          const fileStream = streamSaver.createWriteStream(fileName, {
-            size: totalBytes,
-          });
-          const writer = fileStream.getWriter();
+      //     // ✅ Create stream
+      //     const fileStream = streamSaver.createWriteStream(fileName, {
+      //       size: totalBytes,
+      //     });
+      //     const writer = fileStream.getWriter();
 
-          try {
-            let written = 0;
-            while (written < totalBytes) {
-              // Fill with zeros for speed — or use crypto.getRandomValues(buffer) for random
-              buffer.fill(0);
-              const remaining = totalBytes - written;
-              const chunk =
-                remaining < chunkSize ? buffer.subarray(0, remaining) : buffer;
-              await writer.write(chunk);
-              written += chunk.length;
-            }
-            await writer.close();
-          } catch (err) {
-            console.error("Error generating file:", err);
-            alert("❌ Error generating the dummy APK file.");
-            try {
-              await writer.abort(err);
-            } catch (e) {}
-          }
-        });
-      });
+      //     try {
+      //       let written = 0;
+      //       while (written < totalBytes) {
+      //         // Fill with zeros for speed — or use crypto.getRandomValues(buffer) for random
+      //         buffer.fill(0);
+      //         const remaining = totalBytes - written;
+      //         const chunk =
+      //           remaining < chunkSize ? buffer.subarray(0, remaining) : buffer;
+      //         await writer.write(chunk);
+      //         written += chunk.length;
+      //       }
+      //       await writer.close();
+      //     } catch (err) {
+      //       console.error("Error generating file:", err);
+      //       alert("❌ Error generating the dummy APK file.");
+      //       try {
+      //         await writer.abort(err);
+      //       } catch (e) {}
+      //     }
+      //   });
+      // });
 
       document.querySelector(".how-to-download").onclick = () => {
         console.log("Hello world");
